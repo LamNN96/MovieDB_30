@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <dimen name="margin_all_content">8dp</dimen>
-  <dimen name="high_flipper">220dp</dimen>
+    <dimen name="margin_all_content">8dp</dimen>
+    <dimen name="high_flipper">220dp</dimen>
+    <dimen name="with_flipper">960dp</dimen>
+    <dimen name="with_poster">300dp</dimen>
+    <dimen name="high_poster">700dp</dimen>
+    <dimen name="width_more_icon">11dp</dimen>
+    <dimen name="high_more_icon">12dp</dimen>
+    <dimen name="margin_start_more_icon">4dp</dimen>
+    <dimen name="margin_top_more_icon">12dp</dimen>
 </resources>

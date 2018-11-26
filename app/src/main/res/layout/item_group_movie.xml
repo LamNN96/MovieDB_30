@@ -4,27 +4,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
-  <TextView
-      android:id="@+id/text_label_group"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="@dimen/margin_all_content"
-      android:layout_marginTop="@dimen/margin_all_content"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
-  <android.support.v7.widget.RecyclerView
-      android:id="@+id/recycle_movie"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="@dimen/margin_all_content"
-      android:layout_marginStart="@dimen/margin_all_content"
-      android:layout_marginTop="@dimen/margin_all_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/text_label_group"
-      />
+    <TextView
+        android:id="@+id/text_label_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_all_content"
+        android:textColor="@color/black_all_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <ImageView
+        android:id="@+id/image_more_icon"
+        android:layout_width="@dimen/width_more_icon"
+        android:layout_height="@dimen/high_more_icon"
+        android:layout_marginStart="@dimen/margin_start_more_icon"
+        android:layout_marginTop="@dimen/margin_top_more_icon"
+        app:layout_constraintStart_toEndOf="@+id/text_label_group"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_more_icon"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_all_content"
+        android:layout_marginStart="@dimen/margin_all_content"
+        android:layout_marginTop="@dimen/margin_all_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_label_group"
+        />
+
 
 </android.support.constraint.ConstraintLayout>

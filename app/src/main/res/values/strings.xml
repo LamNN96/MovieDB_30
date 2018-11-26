@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">MovieDB</string>
-  <string name="error_show_image_home">Fail to load movies. Please check your connection!</string>
+    <string name="error_show_image_home">Fail to load movies. Please check your connection!</string>
 </resources>
