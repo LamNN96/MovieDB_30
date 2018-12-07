@@ -22,9 +22,4 @@ public class PersonRepository implements PersonDataSource {
     public void getPersonDetail(int id, GetPersonDetailCallback callback) {
         mDataSource.getPersonDetail(id, callback);
     }
-
-    @Override
-    public void getMovieByPersonId(int id, int page, GetMovieByPersonIdCallback callback) {
-        mDataSource.getMovieByPersonId(id, page, callback);
-    }
 }

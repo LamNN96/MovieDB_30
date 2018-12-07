@@ -21,9 +21,15 @@ public interface MoviesDataSource {
         void onDataNotAvailable(Exception e);
     }
 
+    interface GetMovieByPersonIdCallback {
+        void onDataLoaded(List<Movie> movies);
+
+        void onDataNotAvailable(Exception e);
+    }
+
     void getMovies(LoadMoviesCallback loadMoviesCallback);
 
+    void getMovieByPersonId(int id, int page, GetMovieByPersonIdCallback callback);
+
     void getMovie(String movieId, GetMovieCallback getMovieCallback);
-
-
 }

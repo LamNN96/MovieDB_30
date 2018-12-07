@@ -4,11 +4,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Person {
+    public static final String EMPTY_STRING = "";
     private int mId;
     private String mName;
     private String mCreditId;
     private String mProfilePath;
     private int mGender;
+    private String mBirthday;
+    private String mPlaceOfBirth;
+    private String mBiography;
 
     public Person() {
     }
@@ -16,9 +20,36 @@ public class Person {
     public Person(JSONObject item) throws JSONException {
         mId = item.getInt(PersonJsonKey.ID);
         mName = item.getString(PersonJsonKey.NAME);
-        mCreditId = item.getString(PersonJsonKey.CREDIT_ID);
-        mProfilePath = item.getString(PersonJsonKey.PROFILE_PATH);
         mGender = item.getInt(PersonJsonKey.GENDER);
+        mProfilePath = item.getString(PersonJsonKey.PROFILE_PATH);
+        mCreditId = item.optString(PersonJsonKey.CREDIT_ID, EMPTY_STRING);
+        mBiography = item.optString(PersonJsonKey.BIOGRAPHY, EMPTY_STRING);
+        mBirthday = item.optString(PersonJsonKey.BIRTHDAY, EMPTY_STRING);
+        mPlaceOfBirth = item.optString(PersonJsonKey.PLACE_OF_BIRTH, EMPTY_STRING);
+    }
+
+    public String getBiography() {
+        return mBiography;
+    }
+
+    public void setBiography(String biography) {
+        mBiography = biography;
+    }
+
+    public String getBirthday() {
+        return mBirthday;
+    }
+
+    public void setBirthday(String birthday) {
+        mBirthday = birthday;
+    }
+
+    public String getPlaceOfBirth() {
+        return mPlaceOfBirth;
+    }
+
+    public void setPlaceOfBirth(String placeOfBirth) {
+        mPlaceOfBirth = placeOfBirth;
     }
 
     public String getProfilePath() {
@@ -30,6 +61,10 @@ public class Person {
     }
 
     public int isGender() {
+        return mGender;
+    }
+
+    public int getGender() {
         return mGender;
     }
 
@@ -72,5 +107,8 @@ public class Person {
         public static final String PROFILE_PATH = "profile_path";
         public static final String ORDER = "order";
         public static final String CHARACTER = "character";
+        public static final String PLACE_OF_BIRTH = "place_of_birth";
+        public static final String BIRTHDAY = "birthday";
+        public static final String BIOGRAPHY = "biography";
     }
 }

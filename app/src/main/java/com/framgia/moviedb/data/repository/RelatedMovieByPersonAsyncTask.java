@@ -3,6 +3,7 @@ package com.framgia.moviedb.data.repository;
 import android.os.AsyncTask;
 
 import com.framgia.moviedb.data.model.Movie;
+import com.framgia.moviedb.data.source.MoviesDataSource;
 import com.framgia.moviedb.data.source.PersonDataSource;
 import com.framgia.moviedb.utils.APIUtils;
 import com.framgia.moviedb.utils.Constants;
@@ -17,10 +18,10 @@ import java.util.List;
 public class RelatedMovieByPersonAsyncTask extends AsyncTask<Integer, Void, List<Movie>> {
     public static final int FIRST_ARGUMENT_POSITION = 0;
     public static final int SECOND_ARGUMENT_POSITION = 1;
-    private PersonDataSource.GetMovieByPersonIdCallback mCallback;
+    private MoviesDataSource.GetMovieByPersonIdCallback mCallback;
     private Exception mException;
 
-    public RelatedMovieByPersonAsyncTask(PersonDataSource.GetMovieByPersonIdCallback callback) {
+    public RelatedMovieByPersonAsyncTask(MoviesDataSource.GetMovieByPersonIdCallback callback) {
         mCallback = callback;
     }
 

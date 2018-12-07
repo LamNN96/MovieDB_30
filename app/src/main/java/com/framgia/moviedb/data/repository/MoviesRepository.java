@@ -23,6 +23,11 @@ public class MoviesRepository implements MoviesDataSource {
     }
 
     @Override
+    public void getMovieByPersonId(int id, int page, GetMovieByPersonIdCallback callback) {
+        mDataSource.getMovieByPersonId(id, page, callback);
+    }
+
+    @Override
     public void getMovie(String movieId, GetMovieCallback getMovieCallback) {
         mDataSource.getMovie(movieId, getMovieCallback);
     }

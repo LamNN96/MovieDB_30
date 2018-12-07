@@ -21,7 +21,7 @@ import com.framgia.moviedb.data.model.Crew;
 import com.framgia.moviedb.data.model.Movie;
 import com.framgia.moviedb.data.repository.MoviesRepository;
 import com.framgia.moviedb.data.source.remote.MovieRemoteDataSource;
-import com.framgia.moviedb.screen.PersonActivity;
+import com.framgia.moviedb.screen.person.PersonActivity;
 import com.framgia.moviedb.utils.APIUtils;
 
 import java.util.List;

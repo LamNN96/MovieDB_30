@@ -83,7 +83,7 @@ public class RelatedMovieAdapter extends RecyclerView.Adapter<RelatedMovieAdapte
 
     }
 
-    interface OnItemClickListener {
+    public interface OnItemClickListener {
         void onItemClick(Movie movie);
     }
 }

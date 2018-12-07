@@ -18,7 +18,9 @@ import com.bumptech.glide.request.RequestOptions;
 import com.framgia.moviedb.R;
 import com.framgia.moviedb.data.model.Movie;
 import com.framgia.moviedb.data.model.Person;
+import com.framgia.moviedb.data.repository.MoviesRepository;
 import com.framgia.moviedb.data.repository.PersonRepository;
+import com.framgia.moviedb.data.source.remote.MovieRemoteDataSource;
 import com.framgia.moviedb.data.source.remote.PersonRemoteDataSource;
 import com.framgia.moviedb.screen.more.MoreMovieActivity;
 import com.framgia.moviedb.screen.movie_detail.MovieDetailActivity;
@@ -81,7 +83,7 @@ public class PersonActivity extends AppCompatActivity implements PersonContract.
     public void showRelatedMovie(List<Movie> movies) {
         RelatedMovieAdapter adapter = new RelatedMovieAdapter(this, movies, this);
         mRecyclerView.setAdapter(adapter);
-        adapter.notifyItemRangeInserted(0, movies.size());
+        adapter.notifyItemRangeChanged(0, movies.size());
     }
 
     @Override
@@ -122,8 +124,9 @@ public class PersonActivity extends AppCompatActivity implements PersonContract.
     private void getPersonData() {
         Intent intent = getIntent();
         mId = intent.getExtras().getInt(EXTRA_PERSON_ID);
-        PersonContract.Presenter presenter = new PersonPresenter(this, PersonRepository
-                .getInstance(PersonRemoteDataSource.getInstance()));
+        PersonContract.Presenter presenter = new PersonPresenter(this,
+                PersonRepository.getInstance(PersonRemoteDataSource.getInstance()),
+                MoviesRepository.getInstance(MovieRemoteDataSource.getInstance()));
         presenter.getPersonInfo(mId);
         presenter.getMovieByPersonId(mId, FIRST_PAGE_NUMBER);
     }
